@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "822366432169",
+    "project_id": "swaralink-d8d45",
+    "storage_bucket": "swaralink-d8d45.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:822366432169:android:7040bf989bcd3ea5cc72b8",
+        "android_client_info": {
+          "package_name": "com.swaralink.android.appname"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "822366432169-blc90h8p1ji1eff0a128qotc82r1fmp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdrq1YEUhsIBKm8eFt4lDptFs6gnfoNDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "822366432169-blc90h8p1ji1eff0a128qotc82r1fmp4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "822366432169-rljmqtn5svibdlscvksjr75qc0kgff8d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.swaralink.appname"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

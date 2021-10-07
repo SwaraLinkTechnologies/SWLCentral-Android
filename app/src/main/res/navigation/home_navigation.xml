@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.swaralink.external.fragments.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_sendDataFragment"
+            app:destination="@id/sendDataFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_discoverAndConnectFragment"
+            app:destination="@id/discoverAndConnectFragment" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_knownDeviceListFragment"
+            app:destination="@id/knownDeviceListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_updatePeripheralFirmwareFragment"
+            app:destination="@id/updatePeripheralFirmwareFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentCancelDiscoverAndConnect"
+            app:destination="@id/fragmentCancelDiscoverAndConnect" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentTerminateConnection"
+            app:destination="@id/fragmentTerminateConnection" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentClearKDL"
+            app:destination="@id/fragmentClearKDL" />
+        <action
+            android:id="@+id/action_mainFragment_to_fragmentGetKnownDeviceList"
+            app:destination="@id/fragmentGetKnownDeviceList" />
+        <action
+            android:id="@+id/action_mainFragment_to_directConnectFragment"
+            app:destination="@id/directConnectFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_requestDiagnosticLogsFragment"
+            app:destination="@id/requestDiagnosticLogsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_setPeripheralPrioritiesFragment"
+            app:destination="@+id/setPeripheralPrioritiesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_getPeripheralPrioritiesFragment"
+            app:destination="@+id/getPeripheralPrioritiesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_getCurrentStateFragment"
+            app:destination="@id/getCurrentStateFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_setConfigProfileFragment"
+            app:destination="@id/setConfigProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendDataFragment"
+        android:name="com.swaralink.external.fragments.SendDataFragment"
+        android:label="SendDataFragment"
+        tools:layout="@layout/fragment_send_data" />
+    <fragment
+        android:id="@+id/discoverAndConnectFragment"
+        android:name="com.swaralink.external.fragments.DiscoverAndConnectFragment"
+        android:label="DiscoverAndConnectFragment"
+        tools:layout="@layout/fragment_discover_connect" />
+
+    <fragment
+        android:id="@+id/knownDeviceListFragment"
+        android:name="com.swaralink.external.fragments.KnownDeviceListFragment"
+        android:label="KnownDeviceListFragment"
+        tools:layout="@layout/fragment_known_device_list" />
+    <fragment
+        android:id="@+id/updatePeripheralFirmwareFragment"
+        android:name="com.swaralink.external.fragments.UpdatePeripheralFirmwareFragment"
+        android:label="UpdatePeripheralFirmwareFragment"
+        tools:layout="@layout/fragment_update_peripheral_firmware" />
+    <fragment
+        android:id="@+id/fragmentCancelDiscoverAndConnect"
+        android:name="com.swaralink.external.fragments.FragmentCancelDiscoverAndConnect"
+        android:label="FragmentCancelDiscoverAndConnect"
+        tools:layout="@layout/fragment_cancel_discover_connect" />
+    <fragment
+        android:id="@+id/fragmentTerminateConnection"
+        android:name="com.swaralink.external.fragments.FragmentTerminateConnection"
+        android:label="FragmentTerminateConnection"
+        tools:layout="@layout/fragment_terminate_connection" />
+    <fragment
+        android:id="@+id/fragmentClearKDL"
+        android:name="com.swaralink.external.fragments.FragmentClearKDL"
+        android:label="FragmentClearKDL"
+        tools:layout="@layout/fragment_clear_kdl" />
+    <fragment
+        android:id="@+id/fragmentGetKnownDeviceList"
+        android:name="com.swaralink.external.fragments.FragmentGetKnownDeviceList"
+        android:label="FragmentGetKnownDeviceList"
+        tools:layout="@layout/fragment_get_kdl" />
+    <fragment
+        android:id="@+id/directConnectFragment"
+        android:name="com.swaralink.external.fragments.DirectConnectFragment"
+        android:label="DirectConnectFragment"
+        tools:layout="@layout/fragment_direct_connect" />
+
+    <fragment
+        android:id="@+id/setPeripheralPrioritiesFragment"
+        android:name="com.swaralink.external.fragments.FragmentSetPeripheralPriorities"
+        android:label="FragmentSetPeripheralPriorities"
+        tools:layout="@layout/fragment_set_peripheral_priorities" />
+
+    <fragment
+        android:id="@+id/getPeripheralPrioritiesFragment"
+        android:name="com.swaralink.external.fragments.FragmentGetPeripheralPriorities"
+        android:label="FragmentGetPeripheralPriorities"
+        tools:layout="@layout/fragment_get_peripheral_priorities" />
+
+    <fragment
+        android:id="@+id/getCurrentStateFragment"
+        android:name="com.swaralink.external.fragments.FragmentGetCurrentState"
+        android:label="FragmentGetCurrentState"
+        tools:layout="@layout/fragment_get_current_state" />
+
+    <fragment
+        android:id="@+id/setConfigProfileFragment"
+        android:name="com.swaralink.external.fragments.SetConfigProfileFragment"
+        android:label="SetConfigProfileFragment"
+        tools:layout="@layout/fragment_set_config_profile" />
+
+    <fragment
+        android:id="@+id/requestDiagnosticLogsFragment"
+        android:name="com.swaralink.external.fragments.RequestDiagnosticLogsFragment"
+        android:label="RequestDiagnosticLogsFragment"
+        tools:layout="@layout/fragment_request_diagnostic_logs" />
+</navigation>

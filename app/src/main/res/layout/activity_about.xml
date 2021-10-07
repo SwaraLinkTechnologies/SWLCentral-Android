@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AboutActivity">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/layout_toolbar"/>
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutToolbar"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:src="@drawable/logo_lg"/>
+
+    <!--<TextView
+        android:id="@+id/txtAppVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvVersion"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/app_version"
+        android:layout_marginTop="@dimen/_15sdp"/>
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/txtAppVersion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtAppVersion"
+        app:layout_constraintBottom_toBottomOf="@id/txtAppVersion"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/app_version"/>-->
+
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/app_version"
+        android:layout_marginTop="@dimen/_15sdp"/>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVersion"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/date"
+        android:layout_marginTop="@dimen/_2sdp"/>
+
+    <!--<TextView
+        android:id="@+id/txtServiceUUID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11sdp"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:text="Service UUID"/>
+    <TextView
+        android:id="@+id/tvServiceUUID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtServiceUUID"
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/_11sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="@dimen/_5sdp"/>-->
+
+
+    <TextView
+        android:id="@+id/tvForInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/swaralink_info_txt"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:autoLink="web|email"
+        />
+
+    <TextView
+        android:id="@+id/tvSwaraLinkTech"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/copyright_swl"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_13sdp"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvForInfo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

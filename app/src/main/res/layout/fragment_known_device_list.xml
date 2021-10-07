@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/layout_toolbar" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBegin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/_15sdp" />
+    <TextView
+        android:id="@+id/tvDescLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description:"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@+id/layoutToolbar" />
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/remove_kdl_desc"
+        android:layout_marginLeft="@dimen/_2sdp"
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/_8sdp"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintLeft_toRightOf="@+id/tvDescLabel"
+        app:layout_constraintRight_toRightOf="@+id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="@+id/tvDescLabel" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvKnownDevices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/gray_border_stroke"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesc"
+        app:layout_constraintBottom_toTopOf="@+id/btnRemoveDevice"
+        tools:listitem="@layout/adapter_known_devices" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRemoveDevice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/bg_btn_gradient"
+        android:fontFamily="@font/roboto_medium"
+        android:letterSpacing="0"
+        android:text="Remove Device"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineBegin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

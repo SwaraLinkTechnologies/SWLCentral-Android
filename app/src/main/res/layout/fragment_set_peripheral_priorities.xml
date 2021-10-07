@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.FragmentSetPeripheralPriorities">
+
+    <include
+        android:id="@+id/layoutToolbar"
+        layout="@layout/layout_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutToolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineBegin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/_15sdp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/_15sdp"/>
+
+
+            <TextView
+                android:id="@+id/tvDescLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description:"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_9sdp"
+                app:layout_constraintLeft_toLeftOf="@+id/guidelineBegin"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/set_priorities_desc"
+                android:layout_marginLeft="@dimen/_2sdp"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_8sdp"
+                android:fontFamily="@font/roboto_regular"
+                app:layout_constraintLeft_toRightOf="@+id/tvDescLabel"
+                app:layout_constraintRight_toRightOf="@+id/guidelineEnd"
+                app:layout_constraintTop_toTopOf="@+id/tvDescLabel" />
+
+            <TextView
+                android:id="@+id/tvPriority1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/priority1_heading"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintRight_toRightOf="@id/guidelineEnd"
+                app:layout_constraintLeft_toLeftOf="@+id/guidelineBegin"
+                app:layout_constraintTop_toBottomOf="@id/tvDesc"
+                android:layout_marginTop="@dimen/_12sdp"/>
+
+            <RadioGroup
+                android:id="@+id/radioGrp1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/tvPriority1"
+                app:layout_constraintRight_toRightOf="@id/guidelineEnd"
+                app:layout_constraintLeft_toLeftOf="@+id/guidelineBegin">
+                <RadioButton
+                    android:id="@+id/radioBtn11"
+                    android:text="@string/reduce_power"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/radioBtn12"
+                    android:text="@string/increase_throughput"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/radioBtn13"
+                    android:text="@string/improve_range"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvPriority2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/priority2_heading"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintRight_toRightOf="@id/guidelineEnd"
+                app:layout_constraintLeft_toLeftOf="@+id/guidelineBegin"
+                app:layout_constraintTop_toBottomOf="@+id/radioGrp1" />
+            <RadioGroup
+                android:id="@+id/radioGrp2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/tvPriority2"
+                app:layout_constraintRight_toRightOf="@id/guidelineEnd"
+                app:layout_constraintLeft_toLeftOf="@+id/guidelineBegin">
+                <RadioButton
+                    android:id="@+id/radioBtn21"
+                    android:text="@string/reduce_power"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/radioBtn22"
+                    android:text="@string/increase_throughput"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/radioBtn23"
+                    android:text="@string/improve_range"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvPriority3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/priority3_heading"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintRight_toRightOf="@id/guidelineEnd"
+                app:layout_constraintLeft_toLeftOf="@+id/guidelineBegin"
+                app:layout_constraintTop_toBottomOf="@+id/radioGrp2" />
+            <RadioGroup
+                android:id="@+id/radioGrp3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/tvPriority3"
+                app:layout_constraintRight_toRightOf="@id/guidelineEnd"
+                app:layout_constraintLeft_toLeftOf="@+id/guidelineBegin">
+                <RadioButton
+                    android:id="@+id/radioBtn31"
+                    android:text="@string/reduce_power"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/radioBtn32"
+                    android:text="@string/increase_throughput"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <RadioButton
+                    android:id="@+id/radioBtn33"
+                    android:text="@string/improve_range"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSetPriority"
+                style="@style/MaterialButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_30sdp"
+                android:background="@drawable/bg_btn_gradient"
+                android:fontFamily="@font/roboto_medium"
+                android:letterSpacing="0"
+                android:text="Set Peripheral Priorities"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+                app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
+                app:layout_constraintTop_toBottomOf="@+id/radioGrp3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

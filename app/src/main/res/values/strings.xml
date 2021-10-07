@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">SwaraLink</string>
+
+    <string name="discover_connect">Discover and Connect</string>
+    <string name="peripheral_info">Peripheral Info</string>
+    <string name="send_rcv">Send/Receive</string>
+    <string name="about">About</string>
+    <string name="central_status">Central Status:</string>
+    <string name="bluetooth_idle">Bluetooth Idle</string>
+
+    <string name="peripheral_system_info">Peripheral System Info</string>
+    <string name="device_name">Device Name:</string>
+    <string name="max_rx_payload_length">Max Rx Payload Length:</string>
+    <string name="bluetooth_vendor_id">Bluetooth Vendor ID: </string>
+    <string name="bluetooth_device_id">Bluetooth Device ID:</string>
+
+    <string name="peripheral_status">Peripheral Status</string>
+    <string name="paired_device">Paired Device ID:</string>
+    <string name="current_power_mode">Current Power Mode:</string>
+    <string name="exception_occurred">Exception Occurred:</string>
+    <string name="refresh_peripheral_info">Refresh Peripheral Info</string>
+
+    <string name="mode">Mode</string>
+    <string name="connect_to_first_discovered_device">Connect to first discovered device</string>
+    <string name="connect_to_spec_device">Connect to specific device</string>
+    <string name="known_devices">Known Devices</string>
+    <string name="begin">Begin</string>
+    <string name="cancel">Cancel</string>
+    <string name="timeout">Timeout in sec</string>
+
+    <string name="send_recv">Send/Receive</string>
+    <string name="send_data">Send Data</string>
+    <string name="data">Data</string>
+    <string name="send">Send</string>
+    <string name="acknowledge_transfer">Acknowledged Transfer:</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="received_data">Received Data</string>
+    <string name="send_raw_data">Send Raw Data</string>
+    <string name="id_header">ID Header</string>
+    <string name="minor">Minor</string>
+    <string name="major">Major</string>
+
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnect</string>
+
+
+    <string name="disc_conn_desc">This function is used to establish a Bluetooth connection with a peripheral device that is running the SwaraLink Peripheral middleware library.
+If the device has never been connected to this phone before, it must first be put into pairing mode.
+You can choose to connect to a specific device that has been previously connected, or to connect to the first discovered device.
+This function can only be called while in the SWLCentralStateIdle state.
+</string>
+
+    <string name="cancel_connect_desc">This function is used to cancel a ‘discoverAndConnect’ or ‘directConnect’ process that is currently underway and return to the SWLCentralStateIdle state.
+</string>
+
+    <string name="send_data_desc">This function is used to send data to a connected peripheral device. All data communications are encrypted by default.
+The data can be any length between 1 byte and 8192 bytes (this is the max length supported by the peripheral)
+        The Major ID Header and Minor ID headers can be any value (one byte each) that you like, and can be useful for your application to specify what the data represents.
+If you select to send data using an acknowledged transfer, the peripheral device will confirm that the data has been received and you will receive a evtC2PDataAcknowledged event upon completion of the transfer.
+This function can only be called while in the SWLCentralStateConnected state.
+
+</string>
+    <string name="clear_kdl_desc">This function is used to clear the Known Device List (KDL). When a peripheral device has been removed from the KDL, it must be put into pairing mode to establish a new connection.</string>
+
+    <string name="remove_kdl_desc">This function is used to remove a specific device from the Known Device List (KDL). When a peripheral device has been removed from the KDL, it must be put into pairing mode to establish a new connection.</string>
+
+    <string name="terminate_conn_desc">This function is used to terminate a current Bluetooth connection.
+This function can only be called while in the SWLCentralStateConnected state.
+</string>
+
+    <string name="update_peripheral_firmware_desc">This function is used to perform an over-the-air firmware update on a connected peripheral device.
+This function can only be called while in the SWLCentralStateConnected state.
+</string>
+
+    <string name="known_device_list_desc">This function is used to view the current contents of the Known Device List (KDL). After a peripheral device has connected and paired, it will be added to the KDL.</string>
+
+
+    <string name="direct_connect_desc">This function is used to directly establish a Bluetooth connection with a peripheral device that has been previously paired and is on the Known Device List (KDL).
+If the device has never been connected to this phone before, you must first use the ‘discoverAndConnect’ API to form an initial connection and pair.
+This function can only be called while in the SWLCentralStateIdle state.
+</string>
+
+    <string name="diagnostic_logs_desc">This function is used to request diagnostic logs from the peer device.
+This function can only be called while in the SWLCentralStateConnected state.
+</string>
+
+    <string name="set_priorities_desc">This function will configure a connected peripheral device to prioritize its operation to optimize for power consumption, data throughput, or range / distance.
+It is possible to assign the same priority multiple times for maximum optimization. For example: to get the highest possible throughput, set all three priorities to “Increase Throughput”.
+Note that prioritization involves tradeoffs that impact the user experience. For example, if you heavily prioritize reducing power, there may be a noticeable impact to throughput and responsiveness. If you heavily prioritize increased throughput, the power consumption of the peripheral device will go up.
+This function can only be called while in the SWLCentralStateConnected state.
+</string>
+
+    <string name="get_priorities_desc">This function is used to displayed the current Peripheral Priorities.</string>
+    <string name="get_current_state_desc">This function is used to display the current SWLCentralState.</string>
+
+    <string name="set_config_profile_desc">This function is used to set configuration parameters for the SWLCentral library. Configuration profile files are provided by SwaraLink Technologies. If you do not have a configuration profile file, please contact SwaraLink Technologies’ support team.</string>
+
+
+    <string name="improve_range">Improve \nRange</string>
+    <string name="increase_throughput">Increase \nThroughput</string>
+    <string name="reduce_power">Reduce \nPower</string>
+    <string name="priority1_heading">Priority 1 (Highest Priority)</string>
+    <string name="priority2_heading">Priority 2 (Second Highest Priority)</string>
+    <string name="priority3_heading">Priority 3 (Third Highest Priority)</string>
+
+
+    <string name="app_version">App Version: %1$s</string>
+    <string name="date">Date: %1$s</string>
+
+    <string name="swaralink_info_txt">The SwaraLink Bluetooth® Low Energy Platform is a commercial software product designed to simplify the development of highly-optimized products that use Bluetooth Low Energy Technology. For inquiries in obtaining a license to use the SwaraLink Bluetooth Low Energy Platform in your product, or for more information about SwaraLink Technologies, please visit www.swaralink.com or contact SwaraLink Technologies via email at info@swaralink.com.</string>
+
+    <string name="copyright_swl">Copyright © 2022 SwaraLink Technologies</string>
+
+</resources>
