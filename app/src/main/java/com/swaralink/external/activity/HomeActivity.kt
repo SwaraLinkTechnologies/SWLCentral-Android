@@ -4,24 +4,21 @@ package com.swaralink.external.activity
 // All Rights Reserved
 // Licensed by SwaraLink Technologies, subject to terms of Software License Agreement
 
-import android.Manifest
 import android.app.Activity
-import android.bluetooth.BluetoothAdapter
-import android.bluetooth.BluetoothManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
+import androidx.core.view.isVisible
 import com.android.swaralinkble.BleManager
 import com.android.swaralinkble.ConnectionEventListener
 import com.android.swaralinkble.ConstantUtils
 import com.android.swaralinkble.showToast
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.swaralink.external.adapter.LogAdapter
 import com.swaralink.external.databinding.ActivityHomeBinding
 import com.swaralink.external.removeSpaces
@@ -37,11 +34,6 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var logAdapter: LogAdapter
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
-
-    private val bluetoothAdapter: BluetoothAdapter by lazy {
-        val bluetoothManager = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
-        bluetoothManager.adapter
-    }
 
     private val dateFormatter = SimpleDateFormat("HH:mm:ss.SSS", Locale.US)
     private var logString = StringBuilder()
@@ -87,6 +79,19 @@ class HomeActivity : AppCompatActivity() {
                 if (description.isNotEmpty()) logString.append("Description: $description")
                 logList.add(logString.toString())
                 notifyLog()
+            }
+
+            evtFirmwareUpdateExtra = { state, description ->
+                if (BleManager.INTERNAL_BUILD) {
+                    logString.clear()
+                    logString.append("\r------------\n")
+                    logString.append(dateFormatter.format(Date()) + "\n")
+                    logString.append("Event: SWLCentral.evtFirmwareUpdateExtra\n")
+                    logString.append("State : $state\n")
+                    if (description.isNotEmpty()) logString.append("Description: $description")
+                    logList.add(logString.toString())
+                    notifyLog()
+                }
             }
 
 
@@ -280,6 +285,8 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.bottomSheet)
+
         sharedPreferences = getSharedPreferences("appPreferences", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
@@ -289,11 +296,15 @@ class HomeActivity : AppCompatActivity() {
         BleManager.getInstance().init(application)
         BleManager.INTERNAL_BUILD = false
 
+        binding.rvLogs.isVisible = false
+        binding.tvLog.isVisible = true
+
         binding.btnClearLog.setOnClickListener {
             logString.clear()
             logList.clear()
             logAdapter.notifyDataSetChanged()
 
+            binding.tvLog.text = ""
         }
         binding.btnSaveLog.setOnClickListener {
             if (logList.isEmpty()) return@setOnClickListener
@@ -308,6 +319,28 @@ class HomeActivity : AppCompatActivity() {
 
         binding.toggleButton.isChecked = true
 
+        val bottomSheetCallback = object : BottomSheetBehavior.BottomSheetCallback() {
+
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                when(newState){
+                    BottomSheetBehavior.STATE_COLLAPSED -> {
+                        binding.rvLogs.isVisible = false
+                        binding.tvLog.isVisible = true
+
+                        binding.rvLogs.scrollToPosition(logList.lastIndex)
+                    }
+                    else -> {
+                        binding.rvLogs.isVisible = true
+                        binding.tvLog.isVisible = false
+                    }
+                }
+            }
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                // Do something for slide offset.
+            }
+        }
+        bottomSheetBehavior.addBottomSheetCallback(bottomSheetCallback)
 
     }
 
@@ -334,51 +367,9 @@ class HomeActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         BleManager.getInstance().registerListener(connectionEventListener)
-        requestBluetoothPermission()
-        if (!bluetoothAdapter.isEnabled) promptEnableBluetooth()
+//        requestBluetoothPermission()
+//        if (!bluetoothAdapter.isEnabled) promptEnableBluetooth()
     }
-
-    private fun requestBluetoothPermission() {
-        if (ActivityCompat.checkSelfPermission(
-                this, Manifest.permission.BLUETOOTH_SCAN
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                ActivityCompat.requestPermissions(
-                    this, arrayOf(
-                        Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT
-                    ), 1001
-                )
-            }
-        }
-    }
-
-    private fun promptEnableBluetooth() {
-        if (!bluetoothAdapter.isEnabled) {
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                if (ActivityCompat.checkSelfPermission(
-                        this, Manifest.permission.BLUETOOTH_SCAN
-                    ) != PackageManager.PERMISSION_GRANTED
-                ) {
-                    ActivityCompat.requestPermissions(
-                        this, arrayOf(
-                            Manifest.permission.BLUETOOTH_SCAN,
-                            Manifest.permission.BLUETOOTH_CONNECT
-                        ), 1001
-                    )
-                }
-            } else {
-                resultLauncher.launch(Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE))
-            }
-        }
-    }
-
-    private var resultLauncher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) promptEnableBluetooth()
-
-        }
 
     override fun onDestroy() {
         super.onDestroy()
@@ -417,9 +408,11 @@ class HomeActivity : AppCompatActivity() {
 
     private fun notifyLog() {
         runOnUiThread {
+            binding.tvLog.text = logString.toString()
+
             logAdapter.notifyDataSetChanged()
             if (binding.toggleButton.isChecked) {
-                binding.rvLogs.smoothScrollToPosition(logList.size)
+                binding.rvLogs.smoothScrollToPosition(logList.lastIndex)
             }
         }
     }

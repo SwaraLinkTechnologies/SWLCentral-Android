@@ -29,7 +29,7 @@ class AboutActivity : AppCompatActivity() {
         binding.layoutToolbar.imgToolbarLeft.setOnClickListener { onBackPressed() }
 
         binding.tvVersion.text = getString(R.string.app_version, "v${getAppVersionName(this)}")
-        binding.tvDate.text = getString(R.string.date, "29-SEP-2022")
+        binding.tvDate.text = getString(R.string.date, "09-Nov-2022")
         /*val dateObj: Date = Calendar.getInstance().time
         val dateStr =  SimpleDateFormat("MM-dd-yyyy", Locale.ENGLISH).format(dateObj)
         tvDate.text = dateStr*/

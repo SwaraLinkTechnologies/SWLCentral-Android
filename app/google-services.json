@@ -1,40 +1,168 @@
 {
   "project_info": {
-    "project_number": "822366432169",
-    "project_id": "swaralink-d8d45",
-    "storage_bucket": "swaralink-d8d45.appspot.com"
+    "project_number": "157576715490",
+    "project_id": "swaralink-d20d5",
+    "storage_bucket": "swaralink-d20d5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:822366432169:android:7040bf989bcd3ea5cc72b8",
+        "mobilesdk_app_id": "1:157576715490:android:f223c91d6a8145422912bb",
         "android_client_info": {
           "package_name": "com.swaralink.android.appname"
         }
       },
       "oauth_client": [
         {
-          "client_id": "822366432169-blc90h8p1ji1eff0a128qotc82r1fmp4.apps.googleusercontent.com",
+          "client_id": "157576715490-3eq6mo5bl9jltlmdggb5boua2s4rimqv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swaralink.android.appname",
+            "certificate_hash": "96cfd0d7e32dff07853ad36cb49c8dad109dcfae"
+          }
+        },
+        {
+          "client_id": "157576715490-nboj5atngeq7gh56luvov9gh48kbp0md.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swaralink.android.appname",
+            "certificate_hash": "b61059d3586eb39ef161e4a456f3171b5b5e3894"
+          }
+        },
+        {
+          "client_id": "157576715490-ukqh5a1slmcd5il714tnk48i6d7met58.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swaralink.android.appname",
+            "certificate_hash": "8548ba1fd2db07d0bdcf96bd632798d09791cc26"
+          }
+        },
+        {
+          "client_id": "157576715490-1hpn2anps18usj6npop6ia7mlahmos9f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCdrq1YEUhsIBKm8eFt4lDptFs6gnfoNDU"
+          "current_key": "AIzaSyDpfEGa8678LXJ_9z4NKSCwRJiHFAStRJI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "822366432169-blc90h8p1ji1eff0a128qotc82r1fmp4.apps.googleusercontent.com",
+              "client_id": "157576715490-1hpn2anps18usj6npop6ia7mlahmos9f.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "822366432169-rljmqtn5svibdlscvksjr75qc0kgff8d.apps.googleusercontent.com",
+              "client_id": "157576715490-4s5bmrn7klgk819ij1h0uqdk9t7mqo1r.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.swaralink.appname"
+                "bundle_id": "com.agicent.Swaralink-BLE.external"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157576715490:android:f0156dd82fb1b2fd2912bb",
+        "android_client_info": {
+          "package_name": "com.swaralink.external.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157576715490-58k63ttr6uamb79m9dbpiodtl94ek6l6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swaralink.external.android",
+            "certificate_hash": "8548ba1fd2db07d0bdcf96bd632798d09791cc26"
+          }
+        },
+        {
+          "client_id": "157576715490-od1sn7lebuagt14mm27mrudkcbmd4v90.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swaralink.external.android",
+            "certificate_hash": "b61059d3586eb39ef161e4a456f3171b5b5e3894"
+          }
+        },
+        {
+          "client_id": "157576715490-1hpn2anps18usj6npop6ia7mlahmos9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpfEGa8678LXJ_9z4NKSCwRJiHFAStRJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157576715490-1hpn2anps18usj6npop6ia7mlahmos9f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "157576715490-4s5bmrn7klgk819ij1h0uqdk9t7mqo1r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.agicent.Swaralink-BLE.external"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157576715490:android:76099c4e3a54f2892912bb",
+        "android_client_info": {
+          "package_name": "com.swaralink.internal.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157576715490-hlnd41rmcp9epaf5q251inrek930hblk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swaralink.internal.android",
+            "certificate_hash": "b61059d3586eb39ef161e4a456f3171b5b5e3894"
+          }
+        },
+        {
+          "client_id": "157576715490-k6bditlpbqhgrj2e0p9msp3qraft5cel.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swaralink.internal.android",
+            "certificate_hash": "8548ba1fd2db07d0bdcf96bd632798d09791cc26"
+          }
+        },
+        {
+          "client_id": "157576715490-1hpn2anps18usj6npop6ia7mlahmos9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpfEGa8678LXJ_9z4NKSCwRJiHFAStRJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157576715490-1hpn2anps18usj6npop6ia7mlahmos9f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "157576715490-4s5bmrn7klgk819ij1h0uqdk9t7mqo1r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.agicent.Swaralink-BLE.external"
               }
             }
           ]
